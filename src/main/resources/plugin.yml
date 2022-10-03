@@ -1,0 +1,4 @@
+name: Murder Mystery
+version: '${project.version}'
+main: me.eggerga.murdermystery.MurderMystery
+api-version: 1.19
