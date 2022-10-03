@@ -9,7 +9,7 @@ public final class MurderMystery extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        //TODO make the map a val map
+        //TODO make the map a val map, + prox chat?
         getCommand("start").setExecutor(new Start(this));
 
         this.gameManager = new GameManager(this);

@@ -6,7 +6,10 @@ import org.bukkit.Bukkit;
 
 public class GameManager {
     private final MurderMystery plugin;
+
     private GameState gameState = GameState.LOBBY;
+
+    private final TeamManager teamManager = new TeamManager(this);
 
     public GameManager(MurderMystery plugin) {
         this.plugin = plugin;
@@ -29,6 +32,8 @@ public class GameManager {
                 break;
             case STARTING:
                 new PreGameTimer(plugin).runTaskTimer(plugin, 20L, 20L);
+                teamManager.setRandomRoles();
+                teamManager.sendRoleMessages();
                 // teleport players
                 // assign roles
                 // give murderer his weapon
@@ -42,6 +47,7 @@ public class GameManager {
                 break;
             case RESTARTING:
                 Bukkit.broadcastMessage("Restarting");
+                // reset roles
                 break;
             default:
                 Bukkit.broadcastMessage("Invalid Game State");
