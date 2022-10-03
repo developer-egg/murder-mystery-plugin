@@ -1,4 +1,7 @@
-name: Murder Mystery
+name: MurderMystery
 version: '${project.version}'
 main: me.eggerga.murdermystery.MurderMystery
 api-version: 1.19
+commands:
+  start:
+    description: starts the game

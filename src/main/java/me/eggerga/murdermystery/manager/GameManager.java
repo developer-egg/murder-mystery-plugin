@@ -1,6 +1,7 @@
 package me.eggerga.murdermystery.manager;
 
 import me.eggerga.murdermystery.MurderMystery;
+import me.eggerga.murdermystery.runnables.PreGameTimer;
 import org.bukkit.Bukkit;
 
 public class GameManager {
@@ -27,9 +28,8 @@ public class GameManager {
                 Bukkit.broadcastMessage("Lobby");
                 break;
             case STARTING:
-                Bukkit.broadcastMessage("Starting");
+                new PreGameTimer(plugin).runTaskTimer(plugin, 20L, 20L);
                 // teleport players
-                // countdown
                 // assign roles
                 // give murderer his weapon
                 // set game state to active
